@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../dist/_worker.js/index.js"],
+  "sourceRoot": "/Users/k.orban/Developer/GitHub/solid-start/examples/with-auth/.wrangler/tmp/pages-7iUYXe/bundledWorker-0.9456143383571711.mjs",
+  "sourcesContent": ["globalThis._importMeta_={url:\"file:///_entry.js\",env:{}};export{t as default}from\"./chunks/runtime.mjs\";import\"node:async_hooks\";\n//# sourceMappingURL=index.js.map\n"],
+  "mappings": ";AAAyD,SAAY,SAAY;AAAuB,OAAM;AAA9G,WAAW,eAAa,EAAC,KAAI,qBAAoB,KAAI,CAAC,EAAC;",
+  "names": []
+}
