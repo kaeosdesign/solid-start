@@ -22,9 +22,10 @@
     "@solidjs/router": "^0.14.1",
     "@solidjs/start": "^1.0.6",
     "solid-js": "^1.8.18",
-    "vinxi": "^0.4.1"
+    "vinxi": "^0.4.1",
+    "wrangler": "^3.78.6"
   },
   "engines": {
-    "node": ">=18"
+    "node": "20.17.0"
   }
 }

@@ -1,0 +1,18 @@
+name = "example-with-authjs"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-09"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DISCORD_CLIENT_ID = "1257191185546743808"
+DISCORD_CLIENT_SECRET = "thrmSBbL6hRWc_7tg-wbGtaiBdOzmQtN"
+AUTH_SECRET = "d40e96a10287cfcf90c6b91679f512ee"
+AUTH_TRUST_HOST = "true"
+
+[env.preview]
+compatibility_date = "2024-09-09"
+compatibility_flags = ["nodejs_compat"]
+
+[env.preview.vars]
+NODE_VERSION = "20.17.0"
+NITRO_PRESET = "cloudflare-pages"
