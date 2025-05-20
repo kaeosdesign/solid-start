@@ -18,15 +18,19 @@ function validatePassword(password: unknown) {
 }
 
 async function login(username: string, password: string) {
-  const user = await db.select().from(Users).where(eq(Users.username, username)).get();
+  const dbClient = await db.select();
+  const user = await dbClient.from(Users).where(eq(Users.username, username)).get();
   if (!user || password !== user.password) throw new Error("Invalid login");
   return user;
 }
 
 async function register(username: string, password: string) {
-  const existingUser = db.select().from(Users).where(eq(Users.username, username)).get();
-  if (await existingUser) throw new Error("User already exists");
-  return db.insert(Users).values({ username, password }).returning().get();
+  const selectClient = await db.select();
+  const existingUser = await selectClient.from(Users).where(eq(Users.username, username)).get();
+  if (existingUser) throw new Error("User already exists");
+  
+  const insertClient = await db.insert(Users);
+  return insertClient.values({ username, password }).returning().get();
 }
 
 function getSession() {
@@ -68,7 +72,8 @@ export async function getUser() {
   if (userId === undefined) throw redirect("/login");
 
   try {
-    const user = await db.select().from(Users).where(eq(Users.id, userId)).get();
+    const selectClient = await db.select();
+    const user = await selectClient.from(Users).where(eq(Users.id, userId)).get();
     if (!user) throw redirect("/login");
     return { id: user.id, username: user.username };
   } catch {

@@ -6,6 +6,12 @@
             "driver": "SQLite",
             "database": "${workspaceFolder:with-drizzle}/drizzle/db.sqlite",
             "name": "D1"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "dev",
+            "database": "${workspaceFolder:with-drizzle}/dev.sqlite"
         }
     ]
 }
