@@ -8,15 +8,7 @@ export default defineConfig({
       deployConfig: true,
       nodeCompat: true,
       wrangler: {
-        compatibility_date: "2025-04-02",
-        d1_databases: [
-          {
-            binding: "DB",
-            database_name: "solid-drizzle-db",
-            database_id: "deb3c5a5-0e39-499d-ae4d-fef017c933ec",
-            migrations_dir: "drizzle/migrations"
-          }
-        ]
+        compatibility_date: "2025-04-02"
       }
     },
 

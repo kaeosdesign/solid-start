@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../dist/_worker.js/index.js"],
+  "sourceRoot": "/Users/Home/Developer/GitHub/solid-start/examples/with-drizzle/.wrangler/tmp/pages-OWD7nV/bundledWorker-0.5005543169419815.mjs",
+  "sourcesContent": ["globalThis._importMeta_={url:\"file:///_entry.js\",env:{}};import\"node:buffer\";export{x as default}from\"./chunks/nitro/nitro.mjs\";import\"node:process\";import\"node:events\";import\"node:timers\";import\"node:async_hooks\";import\"node:url\";\n//# sourceMappingURL=index.js.map\n"],
+  "mappings": ";AAAyD,OAAM;AAAc,SAAY,SAAY;AAA2B,OAAM;AAAe,OAAM;AAAc,OAAM;AAAc,OAAM;AAAmB,OAAM;AAA5N,WAAW,eAAa,EAAC,KAAI,qBAAoB,KAAI,CAAC,EAAC;",
+  "names": []
+}
