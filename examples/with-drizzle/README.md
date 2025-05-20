@@ -1,30 +1,68 @@
-# SolidStart
+# SolidStart with Drizzle ORM and Cloudflare D1
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+This example demonstrates how to use SolidStart with Drizzle ORM and Cloudflare D1 database in a Cloudflare Pages environment.
 
-## Creating a project
+## Setup
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
+1. Clone this repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Create a D1 database (if not already done):
+   ```
+   npx wrangler d1 create solid-drizzle-db
+   ```
+4. Update the `wrangler.toml` file with your database ID
+5. Run the setup script to prepare the local database:
+   ```
+   npm run setup
+   ```
 
-# create a new project in my-app
-npm init solid@latest my-app
+## Development
+
+To start the development server with D1 database support:
+
+```
+npm run dev
 ```
 
-## Developing
+This will:
+1. Apply migrations to your local D1 database
+2. Start the development server with the D1 binding available
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Database Schema
 
-```bash
-npm run dev
+The database schema is defined in `drizzle/schema.ts` and includes:
 
-# or start the server and open the app in a new browser tab
-npm run dev
-```
+- `Users` table with `id`, `username`, and `password` fields
 
-## Building
+## Deployment
 
-Solid apps are built with _adapters_, which optimise your project for deployment to different environments.
+To deploy to Cloudflare Pages:
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different adapter, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+1. Make sure your database migrations are applied to production:
+   ```
+   npm run db:push:prod
+   ```
+
+2. Deploy the application:
+   ```
+   npm run deploy
+   ```
+
+## How It Works
+
+1. **Database Connection**: The application connects to Cloudflare D1 using Drizzle ORM in `src/api/db.ts`.
+
+2. **Authentication**: Simple username/password authentication is implemented in `src/api/server.ts`.
+
+3. **Cloudflare Integration**: The application is configured to work with Cloudflare Pages in `app.config.ts`.
+
+## Troubleshooting
+
+If you encounter issues with the D1 database binding not being found:
+
+1. Make sure your `wrangler.toml` file has the correct database ID
+2. Run `npm run setup` to ensure the local database is properly configured
+3. Check the console logs for debugging information about the environment structure

@@ -2,24 +2,33 @@
   "name": "example-with-drizzle",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "node dev.js",
+    "dev:vinxi": "WRANGLER=true vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "deploy": "wrangler deploy",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "wrangler d1 migrations apply solid-drizzle-db --local",
+    "db:push:prod": "wrangler d1 migrations apply solid-drizzle-db",
+    "setup": "node setup-local-db.js"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.10",
+    "@cloudflare/workers-types": "^4.20240517.0",
     "@types/node": "^20.14.8",
+    "wrangler": "4.16.0",
     "drizzle-kit": "^0.22.7"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "^1.1.0",
-    "better-sqlite3": "^11.0.0",
     "drizzle-orm": "^0.31.2",
     "solid-js": "^1.9.5",
     "vinxi": "^0.5.3"
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "trustedDependencies": [
+    "@parcel/watcher"
+  ]
 }

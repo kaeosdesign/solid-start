@@ -1,0 +1,8 @@
+[vars]
+SESSION_SECRET = "supersecretkeyforsessionmanagement"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "solid-drizzle-db"
+database_id = "deb3c5a5-0e39-499d-ae4d-fef017c933ec"
+migrations_dir = "drizzle/migrations" 
