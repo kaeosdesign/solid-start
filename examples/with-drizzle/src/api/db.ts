@@ -11,7 +11,7 @@ export function getDb() {
   let DB;
   
   try {
-    const nativeEvent = event.nativeEvent as any;
+    const nativeEvent = event.nativeEvent.context.cloudflare as any;
     
     // Debug the structure of the event
     console.log('Request event structure:', {

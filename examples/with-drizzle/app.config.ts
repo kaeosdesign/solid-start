@@ -21,7 +21,7 @@ export default defineConfig({
     },
 
     rollupConfig: {
-      external: ["__STATIC_CONTENT_MANIFEST", "async_hooks", "drizzle-orm"]
+      external: ["__STATIC_CONTENT_MANIFEST", "async_hooks"]
     }
   },
   vite: {
